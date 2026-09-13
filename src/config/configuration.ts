@@ -1,7 +1,7 @@
 import { readDockerSecret } from 'src/security/readSecrets';
 
 export default () => ({
-  appPort: process.env.PORT || 8081,
+  appPort: parseInt(process.env.PORT || '8081', 10),
   jwtSecret: process.env.JWT_SECRET,
   mongodb: {
     uri: process.env.MONGODB_URI,
